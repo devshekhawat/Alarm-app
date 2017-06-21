@@ -1,0 +1,24 @@
+﻿<ion-view title="Alarms ({{count}})">
+    <ion-content>
+        <ul class="list">
+          <li class="item" ng-repeat="alarm in alarmdata" onload="startTime()">
+            <div>
+              <h2>{{ alarm.aname }}</h2>
+              <time>{{ alarm.atime }}</time> <br>
+              <button class="button button-positive button-small" ng-click="edit(alarm)" href="#">
+                <i class="icon ion-edit"></i> Edit</button>
+			  <button class="button button-positive button-small" ng-click="deleteData(alarm)" href="#">
+                <i class="icon ion-trash-a"></i> Delete</button>
+            </div>
+            <div class="badge badge-clear">
+              <label class="toggle toggle-assertive">
+                <input type="checkbox" ng-model="alarm.astatus" ng-click="clicked(alarm)">
+                <div class="track">
+                  <div class="handle"></div>
+                </div>
+              </label>
+            </div>
+          </li>
+        </ul>
+    </ion-content>
+</ion-view>
